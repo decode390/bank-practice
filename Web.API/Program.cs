@@ -42,12 +42,6 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-// builder.Services.AddLogging(logging => {
-//     logging.ClearProviders();
-//     logging.AddConsole();
-//     // logging.AddDebug();
-// });
-
 builder.Services.AddTransient(typeof(ILogService<>), typeof(LogService<>));
 
 builder.Services.AddControllers();
